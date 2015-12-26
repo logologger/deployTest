@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>You can do what you wanna do !</title>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/CSS/index.css"/>
+    <link rel="stylesheet" href="lib/CSS/bootstrap.css"/>
+    
+  </head>
+  <body>
+    
+    <header>
+      <h1>Just Do It ! </h1>
+    </header>
+    <section>
+      <div class="container-fluid" id="container">
+      
+       
+  
+      </div>
+         <div id="all_tasks">
+           </div>
+    </section>
+    <footer>
+      
+      <!--Inside a View other View doesnt renders-->
+      
+    </footer>
+    
+    <script id="task_items" type="text/template">
+       
+        <input  type="checkbox"  <%=completed ? 'checked' :''%> >
+      <%=task%>
+        
+            
+         
+        
+    </script>
+        <script type="text/template" id="todoApp">
+      <div class="form-group" >
+         
+          <input  id="task_box" class="form-control" type="text" name="task" placeholder="Just Write your task here slowly ... and hit enter">
+          
+          
+       
+      </div>
+      </script>
+    <script src="lib/JS/jquery.js"></script>
+    <script src="lib/JS/bootstrap.js"></script>
+    <script src="lib/JS/underscore.js"></script>
+    <script src="lib/JS/backbone.js"></script>
+    <script src="lib/JS/backbone_local_storage_min.js"></script>
+    <script src="model/Todo.js"></script>
+    <script src="collection/TodoList.js"></script>
+    <script src="view/fixedView.js"></script>
+    <script src="view/todoView.js"></script>
+    <script src="view/appView.js"></script>
+    <script src="app.js"></script>
+  </body>
+  
+  
+  
+</html>
