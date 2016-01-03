@@ -2,7 +2,9 @@ var Todo=Backbone.Model.extend({
   defaults:{
     
     task:" ",
-    completed:false
+    completed:false,
+    date:new Date()
+    
     
   },
   

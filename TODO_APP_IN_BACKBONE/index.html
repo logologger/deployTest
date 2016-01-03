@@ -4,7 +4,8 @@
     <title>You can do what you wanna do !</title>
     
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>-->
+<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="lib/CSS/index.css"/>
     <link rel="stylesheet" href="lib/CSS/bootstrap.css"/>
     
@@ -30,9 +31,23 @@
     </footer>
     
     <script id="task_items" type="text/template">
-       
-        <input  class="toggle" type="checkbox"  <%=completed ? 'checked' :''%> >
+       <div class="panel <%=completed ? 'panel-success': 'panel-danger'%>">
+       <div class="panel-heading ">
+        <input  class="toggle" type="checkbox"  <%=completed ? 'checked' :''%> ><%=completed ? 'Completed' : 'Not Completed' %>
+        
+        <p class="delete"> Delete It</p>
+        <input class="delete" type="checkbox" >
+        <br>
+        </div>
+        <div class="panel-body">
+      
       <p class="<%=completed?'green':'red'%> task"><%=task%></p>
+      </div>
+      <div class="panel-footer">
+      <p class="date"><%=new Date(Date.parse(date))%></p>
+      <br>
+      </div>
+      </div>
         
             
          

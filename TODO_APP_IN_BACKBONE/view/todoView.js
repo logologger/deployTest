@@ -10,7 +10,7 @@ var TodoView=Backbone.View.extend({
   {
     
     this.model.on('change',this.render,this);
-    
+    this.model.on('destroy',this.remove,this);
   },
   
   render:function()
@@ -22,7 +22,8 @@ var TodoView=Backbone.View.extend({
   events:{
     'click .toggle':'toggle_clicked',
     'dblclick .task':'editable',
-    'keypress .task':'save_the_edit'
+    'keypress .task':'save_the_edit',
+    'click .delete':'delete_the_task'
     
     
   },
@@ -54,6 +55,32 @@ var TodoView=Backbone.View.extend({
      $('.task').attr('contenteditable',false);
     }
    
+  },
+  delete_the_task:function()
+  {
+    alert("Are you sure about it !");
+    //The main advantage of alert is that it will stop the execution here only and will wait 
+    //unitl the user enter Ok otherwise it not delete the model
+    this.model.destroy(
+      {
+        success:function()
+        {
+          
+          console.log("deleted the model success");
+         
+         
+        },
+        error:function()
+        {
+          console.log("Sorry some error happened");
+        }
+        
+        
+        
+      }
+      );
+    //this.render();
+    
   }
   
   

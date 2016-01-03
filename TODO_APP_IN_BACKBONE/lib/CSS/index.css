@@ -13,6 +13,7 @@ section{
   
   height:70%;
   width:100%;
+  font-family:Lora;
   
 }
 footer{
@@ -48,22 +49,36 @@ You can set height to auto and min-height to 100%. That is, only if the inner di
   
   
 }
+
+
 .green
 {
+/*
   background-color:#00ffa0;
-
-  border:1px solid black;
+*/
+  
   line-spacing:20px; 
-  border-radius:25px;
+  
   
   
   
 }
 .red
 {
-  border:1px solid black;
+ 
   line-spacing:20px; 
-  border-radius:25px;
-  background-color:#ffaf00;
+ 
+ /* background-color:#ffaf00;
+  */
+}
+.delete{
+  
+  float:right;
+  
+}
+.date{
+  float:left;
+  
+  
   
 }
