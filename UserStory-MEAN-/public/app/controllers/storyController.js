@@ -1,6 +1,6 @@
 angular.module('StoryController',['storyService'])
 
-.controller('storyController',function(story)
+.controller('storyController',function(story,socketio)
            {
     var vm=this;
     
@@ -18,9 +18,12 @@ angular.module('StoryController',['storyService'])
             vm.storyData='';
             vm.message=data.message;
             
-              vm.stories.push(data);
+              //vm.stories.push(data);
         });
     };
+    socketio.on('story',function(data){
+        vm.stories.push(data);
+    })
     
   
     

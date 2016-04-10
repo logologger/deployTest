@@ -19,7 +19,7 @@ function createToken(user)
     
 }
 
-module.exports=function(app,express)
+module.exports=function(app,express,io)
 {
     var api=express.Router();
     api.post('/signup',function(req,res)
@@ -140,13 +140,14 @@ module.exports=function(app,express)
            creator:req.decoded.id,
            content:req.body.content
        });
-       story.save(function(err)
+       story.save(function(err,newStory)
                  {
            if(err)
                {
                    res.send(err);
                    return;
                }
+           io.emit('story',newStory);
            res.json({message:"Story created Successfully"});
        });
        
